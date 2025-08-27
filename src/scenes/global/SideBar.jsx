@@ -27,9 +27,9 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       style={{ color: colors.grey[100] }}
       onClick={() => setSelected(title)}
       icon={icon}
+      component={<Link to={to} />}
     >
       <Typography>{title}</Typography>
-      <Link to={to} />
     </MenuItem>
   );
 };
@@ -46,7 +46,7 @@ function SideBar() {
         rootStyles={{
           ".ps-sidebar-container": {
             backgroundColor: colors.primary[400],
-            minHeight:"100vh"
+            minHeight: "100vh",
           },
           borderRight: "none",
         }}
@@ -54,26 +54,30 @@ function SideBar() {
         <Menu
           iconShape="square"
           menuItemStyles={{
-            button:({level,active,disabled})=>({
-              padding:"5px 35px 5px 20px",
-              color:colors.grey[100] + "!important",
-              backgroundColor:"transparent !important",
-              ":hover":{
-                color:"#858dfb !important",
-                backgroundColor:"transparent !important",
+            button: ({ level, active, disabled }) => ({
+              padding: "5px 35px 5px 20px",
+              color: colors.grey[100] + "!important",
+              backgroundColor: "transparent !important",
+              ":hover": {
+                color: "#858dfb !important",
+                backgroundColor: "transparent !important",
               },
-              ...(active ? {
-                color:"#6870fa !important",
-                fontWeight:"bold",
-              } : {}),
-              ...(disabled ? {
-                color:colors.grey[500] + "!important",
-                cursor:"not-allowed",
-              } : {}),
+              ...(active
+                ? {
+                    color: "#6870fa !important",
+                    fontWeight: "bold",
+                  }
+                : {}),
+              ...(disabled
+                ? {
+                    color: colors.grey[500] + "!important",
+                    cursor: "not-allowed",
+                  }
+                : {}),
             }),
             icon: {
-              backgroundColor:"transparent !important"
-            } 
+              backgroundColor: "transparent !important",
+            },
           }}
         >
           {/* LOGO AND MENU ICON */}
@@ -139,6 +143,13 @@ function SideBar() {
               selected={selected}
               setSelected={setSelected}
             />
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Data
+            </Typography>
             <Item
               title="Manage Team"
               to="/team"
@@ -160,9 +171,16 @@ function SideBar() {
               selected={selected}
               setSelected={setSelected}
             />
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Pages
+            </Typography>
             <Item
               title="Profile Form"
-              to="/Form"
+              to="/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -181,6 +199,13 @@ function SideBar() {
               selected={selected}
               setSelected={setSelected}
             />
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Chart
+            </Typography>
             <Item
               title="Bar Chart"
               to="/bar"
