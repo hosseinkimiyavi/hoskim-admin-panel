@@ -20,12 +20,12 @@ body,
 }
 
 /* Track  */
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track:hover {
   background: #e0e0e0;
 }
 
 /* Handle  */
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb:hover {
   background: #888;
 }
 

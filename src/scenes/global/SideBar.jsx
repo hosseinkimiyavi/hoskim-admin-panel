@@ -46,7 +46,7 @@ function SideBar() {
         rootStyles={{
           ".ps-sidebar-container": {
             backgroundColor: colors.primary[400],
-            minHeight: "100vh",
+            minHeight:"100vh",
           },
           borderRight: "none",
         }}
