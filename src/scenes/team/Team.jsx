@@ -73,10 +73,11 @@ function Team() {
     <>
       <Box m="20px">
         <Header title="TEAM" subtitle="Managing the Team Members" />
-        <Box m="1px 0 0 0" height="80vh">
+        <Box m="40px 0 0 0" height="80vh">
           <DataGrid
             rows={mockDataTeam}
             columns={columns}
+            scrollbarSize={0}
           sx={{
         border: "none",
 
