@@ -40,28 +40,32 @@ function Team() {
       field: "access",
       headerName: "access Level",
       flex: 1,
-      renderCell:({row:{access}})=>{
+      headerAlign:"center",
+      align:"center",
+      renderCell: ({ row: { access } }) => {
         return (
           <Box
-          width="60%"
-          m="0 auto"
-          p="5px"
-          display="flex"
-          justifyContent="center"
-          backgroundColor= {
-            access === "admin" ? colors.greenAccent[600] : colors.greenAccent[700]
-          }
-          borderRadius="4px"
+            width="60%"
+            
+            p="5px"
+            sx={{display:"flex",justifyContent:"center",alignItems:"center",m:"0 auto"}}
+            backgroundColor={
+              access === "admin"
+                ? colors.greenAccent[600]
+                : colors.greenAccent[700]
+            }
+            borderRadius="4px"
           >
-          {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
-          {access === "manager" && <SecurityOutlinedIcon />}
-          {access === "user" && <LockOpenOutlinedIcon />}
-          <Typography color={colors.grey[100]} sx={{ml:"5px"}} >
-            {access}
-          </Typography>
+            {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
+            {access === "manager" && <SecurityOutlinedIcon />}
+            {access === "user" && <LockOpenOutlinedIcon />}
+            <Typography color={colors.grey[100]} sx={{ ml: "5px"}}>
+              {access}
+            </Typography>
+            
           </Box>
-        )
-      }
+        );
+      },
     },
   ];
 
@@ -69,8 +73,53 @@ function Team() {
     <>
       <Box m="20px">
         <Header title="TEAM" subtitle="Managing the Team Members" />
-        <Box m="1px 0 0 0"  >
-          <DataGrid rows={mockDataTeam} columns={columns} />
+        <Box m="1px 0 0 0" height="80vh">
+          <DataGrid
+            rows={mockDataTeam}
+            columns={columns}
+          sx={{
+        border: "none",
+
+        // حذف خطوط
+        "--DataGrid-rowBorderColor": "transparent",
+        "--DataGrid-cellBorder": "0px",
+
+        // سلول‌ها
+        "& .MuiDataGrid-cell": {
+          borderBottom: "none",
+          display:"flex",
+          justifyContent:"center",
+          alignItems:"center"
+        },
+
+        // ردیف‌ها
+        "& .MuiDataGrid-row": {
+          borderBottom: "none",
+        },
+
+        // ستون خاص
+        "& .name-column--cell": {
+          color: colors.greenAccent[300],
+        },
+
+        // هدر جدول 
+        "& .MuiDataGrid-columnHeader": {
+          backgroundColor: colors.blueAccent[700],
+          borderBottom: "none",
+        },
+
+        // بک‌گراند بدنه
+        "& .MuiDataGrid-virtualScroller": {
+          backgroundColor: colors.primary[400],
+        },
+
+        // فوتر
+        "& .MuiDataGrid-footerContainer": {
+          backgroundColor: colors.blueAccent[700],
+          borderTop: "none",
+        },
+      }}
+          />
         </Box>
       </Box>
     </>
