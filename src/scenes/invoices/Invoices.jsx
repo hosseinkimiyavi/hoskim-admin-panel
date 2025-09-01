@@ -5,6 +5,7 @@ import { mockDataInvoices } from "../../Data/mockData.js";
 import { useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import Typography from "@mui/material/Typography";
+import Footer from "../../Components/Footer.jsx";
 
 function Invoices() {
   const theme = useTheme();
@@ -101,6 +102,7 @@ function Invoices() {
             }}
           />
         </Box>
+        <Footer />
       </Box>
     </>
   );

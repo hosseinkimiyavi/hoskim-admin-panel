@@ -2,6 +2,7 @@ import { Box, Grid } from '@mui/material'
 import React from 'react'
 import LineChart from '../../Components/LineChart'
 import Header from '../../Components/Header'
+import Footer from '../../Components/Footer'
 
 function Line() {
   return (
@@ -10,6 +11,7 @@ function Line() {
       <Grid container height="75vh" >
        <LineChart />
       </Grid>
+      <Footer />
 
     </Box>
   )

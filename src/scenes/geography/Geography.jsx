@@ -2,6 +2,7 @@ import { Box, Grid, useTheme } from "@mui/material"
 import Header from "../../Components/Header"
 import GeographyChart from "../../Components/GeographyChart"
 import { tokens } from "../../Theme/theme";
+import Footer from "../../Components/Footer";
 
 function Geography() {
       const theme = useTheme();
@@ -16,6 +17,7 @@ function Geography() {
           <GeographyChart isDashboard={false} />  
 
         </Grid>   
+        <Footer />
         </Box> 
     
   )

@@ -4,6 +4,7 @@ import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
 import { tokens } from "../../Theme/theme";
+import Footer from "../../Components/Footer";
 
 
 
@@ -157,6 +158,7 @@ const colors = tokens(theme.palette.mode);
           </form>
         )}
       </Formik>
+      <Footer />
     </Box>
     </>
   );

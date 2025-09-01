@@ -6,6 +6,7 @@ import { mockDataTeam } from "../../Data/mockData.js";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
+import Footer from "../../Components/Footer.jsx";
 
 function Team() {
   const theme = useTheme();
@@ -122,6 +123,7 @@ function Team() {
       }}
           />
         </Box>
+        <Footer />
       </Box>
     </>
   );

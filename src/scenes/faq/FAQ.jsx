@@ -6,6 +6,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { tokens } from "../../Theme/theme";
+import Footer from "../../Components/Footer";
 
 function FAQ() {
   const theme = useTheme();
@@ -111,6 +112,7 @@ function FAQ() {
             </Typography>
           </AccordionDetails>
         </Accordion>
+        <Footer />
       </Box>
     </>
   );

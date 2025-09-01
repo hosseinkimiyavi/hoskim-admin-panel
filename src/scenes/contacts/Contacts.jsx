@@ -33,6 +33,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import SearchIcon from "@mui/icons-material/Search";
 import Typography from "@mui/material/Typography";
 import { useRef, useState } from "react";
+import Footer from "../../Components/Footer.jsx";
 
 const StyledQuickFilter = styled(QuickFilter)({
   display: "grid",
@@ -283,6 +284,7 @@ function Contacts() {
             }}
           />
         </Box>
+        <Footer />
       </Box>
     </>
   );

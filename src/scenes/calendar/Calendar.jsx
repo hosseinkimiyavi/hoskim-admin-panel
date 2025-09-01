@@ -17,6 +17,7 @@ import {
 import Header from "../../components/Header";
 import { tokens } from "../../Theme/theme";
 import { useState } from "react";
+import Footer from "../../Components/Footer";
 
 function Calendar() {
   const theme = useTheme();
@@ -116,6 +117,7 @@ function Calendar() {
             />
           </Grid>
         </Grid>
+        <Footer />
       </Box>
     </>
   );

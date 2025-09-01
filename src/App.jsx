@@ -19,12 +19,14 @@ import Calendar from "./scenes/calendar/Calendar";
 
 
 
+
 function App() {
   const [theme, colorMode] = useMode();
   return (
     <>
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
+       
           <CssBaseline />
           <div className="app">
             <SideBar />
@@ -45,6 +47,7 @@ function App() {
               </Routes>
             </main>
           </div>
+      
         </ThemeProvider>
       </ColorModeContext.Provider>
     </>
