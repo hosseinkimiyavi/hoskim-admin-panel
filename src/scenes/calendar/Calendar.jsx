@@ -14,7 +14,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import Header from "../../components/Header";
+import Header from "../../Components/Header";
 import { tokens } from "../../Theme/theme";
 import { useState } from "react";
 import Footer from "../../Components/Footer";
