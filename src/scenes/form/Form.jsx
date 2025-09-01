@@ -2,7 +2,7 @@ import { Box, Button, TextField,Grid, useTheme } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Header from "../../components/Header";
+import Header from "../../Components/Header";
 import { tokens } from "../../Theme/theme";
 import Footer from "../../Components/Footer";
 
