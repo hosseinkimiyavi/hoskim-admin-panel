@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
-import Header from "../../components/Header";
+import Header from "../../Components/Header";
 import BarChart from "./BarChart";
 import Footer from "../../Components/Footer";
 
