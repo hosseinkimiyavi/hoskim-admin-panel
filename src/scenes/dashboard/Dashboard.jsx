@@ -8,7 +8,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { tokens } from "../../Theme/theme";
-import { mockTransactions } from "../../data/mockData";
+import { mockTransactions } from "../../Data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
