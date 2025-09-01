@@ -3,7 +3,7 @@ import { mockBarData as data } from "../../data/mockData";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../Theme/theme";
 
-function BarChart() {
+function BarChart({isDashboard = false}) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
@@ -76,7 +76,7 @@ function BarChart() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "country",
+          legend: isDashboard ? undefined : "country",
           legendPosition: "middle",
           legendOffset: 32,
         }}
@@ -84,7 +84,7 @@ function BarChart() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "food",
+          legend: isDashboard ? undefined : "food",
           legendPosition: "middle",
           legendOffset: -40,
         }}
