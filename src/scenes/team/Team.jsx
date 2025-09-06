@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Grid, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../Theme/theme";
 import Header from "../../Components/Header";
 import { DataGrid } from "@mui/x-data-grid";
@@ -39,17 +39,21 @@ function Team() {
     },
     {
       field: "access",
-      headerName: "access Level",
+      headerName: "Access Level",
       flex: 1,
-      headerAlign:"center",
-      align:"center",
+      headerAlign: "center",
+      align: "center",
       renderCell: ({ row: { access } }) => {
         return (
           <Box
-            width="60%"
-            
+            width="70%"
             p="5px"
-            sx={{display:"flex",justifyContent:"center",alignItems:"center",m:"0 auto"}}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              m: "0 auto",
+            }}
             backgroundColor={
               access === "admin"
                 ? colors.greenAccent[600]
@@ -60,10 +64,9 @@ function Team() {
             {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
             {access === "manager" && <SecurityOutlinedIcon />}
             {access === "user" && <LockOpenOutlinedIcon />}
-            <Typography color={colors.grey[100]} sx={{ ml: "5px"}}>
+            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
               {access}
             </Typography>
-            
           </Box>
         );
       },
@@ -74,55 +77,69 @@ function Team() {
     <>
       <Box m="20px">
         <Header title="TEAM" subtitle="Managing the Team Members" />
-        <Box m="40px 0 0 0" height="80vh">
+
+        <Box
+          mt="40px"
+          height="75vh"
+          sx={{
+            width: "100%",
+            overflowX: "auto", // 👈 فعال‌سازی اسکرول افقی
+          }}
+        >
           <DataGrid
             rows={mockDataTeam}
             columns={columns}
             scrollbarSize={0}
-          sx={{
-        border: "none",
+            sx={{
+              border: "none",
+              minWidth: "800px",
 
-        // حذف خطوط
-        "--DataGrid-rowBorderColor": "transparent",
-        "--DataGrid-cellBorder": "0px",
+              // حذف خطوط
+              "--DataGrid-rowBorderColor": "transparent",
+              "--DataGrid-cellBorder": "0px",
 
-        // سلول‌ها
-        "& .MuiDataGrid-cell": {
-          borderBottom: "none",
-          display:"flex",
-          justifyContent:"center",
-          alignItems:"center"
-        },
+              // سلول‌ها
+              "& .MuiDataGrid-cell": {
+                borderBottom: "none",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              },
 
-        // ردیف‌ها
-        "& .MuiDataGrid-row": {
-          borderBottom: "none",
-        },
+              // ردیف‌ها
+              "& .MuiDataGrid-row": {
+                borderBottom: "none",
+              },
 
-        // ستون خاص
-        "& .name-column--cell": {
-          color: colors.greenAccent[300],
-        },
+              // ستون خاص
+              "& .name-column--cell": {
+                color: colors.greenAccent[300],
+              },
 
-        // هدر جدول 
-        "& .MuiDataGrid-columnHeader": {
-          backgroundColor: colors.blueAccent[700],
-          borderBottom: "none",
-        },
+              // هدر جدول
+              "& .MuiDataGrid-columnHeader": {
+                backgroundColor: colors.blueAccent[700],
+                borderBottom: "none",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              },
 
-        // بک‌گراند بدنه
-        "& .MuiDataGrid-virtualScroller": {
-          backgroundColor: colors.primary[400],
-        },
+              // بک‌گراند بدنه
+              "& .MuiDataGrid-virtualScroller": {
+                backgroundColor: colors.primary[400],
+              },
 
-        // فوتر
-        "& .MuiDataGrid-footerContainer": {
-          backgroundColor: colors.blueAccent[700],
-          borderTop: "none",
-        },
-      }}
+              // فوتر
+              "& .MuiDataGrid-footerContainer": {
+                backgroundColor: colors.blueAccent[700],
+                borderTop: "none",
+              
+              },
+            }}
           />
         </Box>
+
         <Footer />
       </Box>
     </>
